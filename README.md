@@ -44,7 +44,20 @@ In the command line, enter `'npm run start'`. As long as there are no errors, th
 
 ## Usage
 
+#### Step 1
 
+Run the application:
+As mentioned in the installation section, install and run the application.
+
+#### Step 2
+
+First time access to Insomnia:
+To send requests to the correct routes, it is recommended to install [Insomnia](https://insomnia.rest/download). It can be downloaded on Windows, Mac, or Linux.
+
+#### Step 3
+
+Insomnia features:
+Under DEBUG, there are CRUD functions to choose from. The most common functions are GET, POST, PUT, and DELETE. Let's first start with GET and type in `localhost:3001`. This should display data. Depending on the route you'd like to check, you can pull response data of one request and feed it into the next request.
 
 ## Deployed Page
 []()
