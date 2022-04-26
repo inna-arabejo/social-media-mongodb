@@ -33,14 +33,10 @@ const reactionSchema = new Schema(
 
 const thoughtSchema = new Schema(
   {
-    thoughts: {
-      type: Schema.Types.ObjectId,
-      ref: 'Thought',
-    },
     thoughtText: {
       type: String,
       required: true,
-      maxlength: 240,
+      maxlength: 280,
       minlength: 1,
     },
     createdAt: {
