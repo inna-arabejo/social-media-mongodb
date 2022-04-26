@@ -20,7 +20,27 @@ The following dependencies were installed to run the application.
 * [mongoose](https://www.npmjs.com/package/mongoose)
 
 ## Steps to Install
+If you wish to run it locally, you can follow these instructions:
 
+#### Step 1
+
+Download or Clone this repo:
+You can either download the repo as a zip file and unzip it to your computer, or you can clone it down to your computer directly.
+
+#### Step 2
+
+Navigate to App Directory:
+Make sure you are in the directory of the application. It should be in a folder named social-media-mongodb. 
+
+#### Step 3
+
+Install Dependencies:
+If there's no package.json file, enter `'npm init'` to download it. If there's already a package.json file, in the terminal, enter `'npm install'`. This should cause the application to find and install all necessary dependencies. Express and mongoose will the two dependencies needed to run this application. 
+
+#### Step 4
+
+Start the application:
+In the command line, enter `'npm run start'`. As long as there are no errors, this should start the server and run it at http://localhost:3001
 
 ## Usage
 
