@@ -30,10 +30,9 @@ const reactionSchema = new Schema(
     toJSON: {
       getters: true,
     },
-    id: false,
   }
 );
 
 const Reaction = model('Reaction', reactionSchema);
 
-module.exports = User;
+module.exports = Reaction;
