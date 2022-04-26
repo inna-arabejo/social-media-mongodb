@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Objectives 
-Build an application programming interface for a social media web application where users can share their thoughts, react to friends' thoughts, and create a friend list. You'll use Express.js for routing, a MongoDB database, and the Mongoose ODM. 
+Build an API for a social media web application where users can share their thoughts, react to friends' thoughts, and create a friend list. You'll use Express.js for routing, a MongoDB database, and Mongoose ODM. 
 
 ## Table of Contents
 1. [Installation](#installation)

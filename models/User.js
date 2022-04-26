@@ -9,7 +9,7 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      reuired: true,
+      required: true,
       unique: true,
       trim: true,
     },
@@ -21,7 +21,7 @@ const userSchema = new Schema(
       match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please enter a valid email address']
     },
     friends: {
-    
+      _id: []
     },
 
   },
@@ -29,6 +29,7 @@ const userSchema = new Schema(
     toJSON: {
       getters: true,
     },
+    id: false,
   }
 );
 
