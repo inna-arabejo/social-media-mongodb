@@ -9,7 +9,7 @@ const {
 } = require('../../controllers/studentController');
 
 // /api/thoughts
-router.route('/').get(getAllUsers).get(getAllThoughts).post(getUsers);
+router.route('/').get(getAllUsers).get(getThoughts).post(getUsers);
 
 // /api/thoughts/:thoughtId
 router.route('/:thoughtId').get(getSingleUser).get(getSingleThought);
