@@ -1,8 +1,7 @@
 const { User, Thought } = require('../models');
 
 const userController = {
-  // getAllUsers
-  getUsers( req, res ){
+  getAllUsers( req, res ){
     User.find()
     .select('-__v')
     .then((dbUserData) => {
@@ -33,7 +32,7 @@ const userController = {
   },
 
   createUsers( req, res ){
-    User.find()
+    User.find({})
     .select('-__v')
     .then((dbUserData) => {
       res.json(dbUserData);
