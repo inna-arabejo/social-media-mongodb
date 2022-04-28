@@ -74,7 +74,22 @@ const userController = {
     });
   },
 
-  addFriend({ params }, res) {
+  deleteUser({ params }, res) {
+    User.findOneAndDelete({_id: params.id})
+    Promise.all(userData.thoughts.map((thought) => Thought.findOneAndDelete({_id: thought})))
+    .then((dbUserData) => {
+      if(!dbUserData) {
+        res.status(404).json({ message: 'No user found with this ID!' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+  },
+
+  addFriendToFriendList({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.id },
       { $push: { friends: params.friendId }},
@@ -95,13 +110,32 @@ const userController = {
     .catch((err) => {
       res.status(400).json(err);
     });
-  }
+  },
 
+  removeFriendFromFriendList({ params }, res) {
+    User.findOneAndUpdate(
+      { _id: params.id },
+      { $pull: { friends: params.friendId }},
+      { new: true }
+    )
+    .populate({ 
+      path: 'friends', 
+      select: ('-__v') 
+    })
+    .select('-__v')
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No user found with this id'});
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+  }
 
 }
 
-// deleteUser + deleteAssociatedThoughts
-// addFriendToFriendList
-// removeFriendFromFriendList
 
 module.exports = userController;
