@@ -33,7 +33,7 @@ const userController = {
     })
     .select('-__v')
     .then((dbUserData) => {
-      if (!DBUserData){
+      if (!dbUserData){
         return res.status(404).json({
           message: 'No user with this id.'
         })
