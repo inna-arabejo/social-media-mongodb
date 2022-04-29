@@ -76,7 +76,6 @@ const userController = {
 
   deleteUser({ params }, res) {
     User.findOneAndDelete({_id: params.id})
-    Promise.all(userData.thoughts.map((thought) => Thought.findOneAndDelete({_id: thought})))
     .then((dbUserData) => {
       if(!dbUserData) {
         res.status(404).json({ message: 'No user found with this ID!' });
@@ -134,6 +133,7 @@ const userController = {
       res.status(400).json(err);
     });
   }
+
 
 }
 

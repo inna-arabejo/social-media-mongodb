@@ -2,10 +2,10 @@ const { User, Thought } = require('../models');
 
 const thoughtController = {
   getThoughts(req, res) {
-    Thought.find()
-    .sort({
-      createdAt: -1
-    })
+    Thought.find({})
+    // .sort({
+    //   createdAt: -1
+    // })
     .then((dbThoughtData) => {
       res.json(dbThoughtData);
     })
@@ -15,11 +15,11 @@ const thoughtController = {
   },
 
   // getSingleThought by id
-  getSingleThought(req, res) {
-    Thought.findOne({_id: req.params.id})
-    .sort({
-      createdAt: -1
-    })
+  getSingleThought({ params }, res) {
+    Thought.findOne({_id: params.thoughtId})
+    // .sort({
+    //   createdAt: -1
+    // })
     .then((dbThoughtData) => {
       res.json(dbThoughtData);
     })
@@ -83,7 +83,7 @@ const thoughtController = {
     });
   },
 
-  addReactionToAThought({ params }, res) {
+  addReactionToAThought({ params, body }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $push: {reactions: body }},

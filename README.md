@@ -45,7 +45,7 @@ If there's no package.json file, enter `'npm init'` to download it. If there's a
 #### Step 5
 
 Start the application:
-In the command line, enter `'npm run start'`. As long as there are no errors, this should start the server and run it at http://localhost:3001
+In the command line, enter `'npm run start'` or `'node server.js'`. As long as there are no errors, this should start the server and run it at http://localhost:3001
 
 ## Usage
 
@@ -65,12 +65,11 @@ Insomnia features:
 Under DEBUG, there are CRUD functions to choose from. The most common functions are GET, POST, PUT, and DELETE. Let's first start with GET and type in `localhost:3001`. This should display data. Depending on the route you'd like to check, you can pull response data of one request and feed it into the next request.
 
 ## Walkthrough Video
-[]()
+[Social Media MongoDB Walkthrough](https://youtu.be/VyIrneDdH_M)
 
 ## Screenshots
-![]()
-![]()
-![]()
+![Routes Insomnia](./public/assets/images/routes-insomnia.jpg)
+![Routes Insomnia](./public/assets/images/all-users.jpg)
 
 ## Technologies Used
 Express, MongoDB, Mongoose, Node.js
