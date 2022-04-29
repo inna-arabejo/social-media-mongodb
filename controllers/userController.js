@@ -47,7 +47,7 @@ const userController = {
 
   createUsers({ body }, res ){
     User.create(body)
-    .select('-__v')
+    // .select('-__v')
     .then((dbUserData) => {
       res.json(dbUserData);
     })
